@@ -2,9 +2,12 @@
 - name: flocker-client
   box: ubuntu/trusty64
   priv_ip: 192.168.1.101
-- name: flocker-node1
+- name: flocker-agent-node1
   box: ubuntu/trusty64
   priv_ip: 192.168.1.102
-- name: flocker-node2
+- name: flocker-agent-node2
   box: ubuntu/trusty64
   priv_ip: 192.168.1.103
+- name: flocker-control-node
+  box: ubuntu/trusty64
+  priv_ip: 192.168.1.104
