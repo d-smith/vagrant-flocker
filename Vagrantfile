@@ -19,8 +19,12 @@ servers = YAML.load_file(File.join(File.dirname(__FILE__), 'servers.yaml'))
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.ssh.insert_key = false
+  
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_guest = true
 
   servers.each do |server|
+
     config.vm.define server['name'] do |srv|
       srv.vm.box_check_update = false
       srv.vm.hostname = server['name']
